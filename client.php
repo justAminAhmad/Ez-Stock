@@ -64,7 +64,12 @@ if (isset($_POST['action'])) {
                                             <td><?= $client['adresse'] ?></td>
 
                                             <td>
-                                                <a href="./clientModif.php">Modifier</a>
+                                                <form method="post" action="./clientModif.php?edit">
+                                                    <input hidden type="text" value=<?= $client['id_client'] ?> name="id" id="id" />
+                                                    <button type="submit" name="action" value="edit" class="btn btn-primary">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                </form>
                                             </td>
 
                                             <td>
@@ -81,7 +86,7 @@ if (isset($_POST['action'])) {
                                         } 
                                         else 
                                         {
-                                            echo "<p class='mt-5 mx-auto'>Il n'ya pas de client</p>";
+                                            echo "<p class='mt-5 mx-auto text-center'>Il n'ya pas de client</p>";
                                         }
                                         ?>
                                     </tbody>

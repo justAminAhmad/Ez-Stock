@@ -8,7 +8,7 @@
                         <a href="." class="link-secondary">Logo</a>.
                     </li>
                     <li class="list-inline-item">
-                        <a href="http://wwww.github.com" class="link-secondary" rel="noopener">
+                        <a href="https://github.com/justAminAhmad" class="link-secondary" rel="noopener">
                             Made with <i class="fa fa-heart text-danger"></i> by Amin
                         </a>
                     </li>

@@ -13,6 +13,23 @@
                 </div>
             </div>
         </div>
+        <div class="container-xl">
+            <div class="row mb-5">
+                <div class="card col-4 offset-4">
+                    <div class="card-body">
+                        <form>
+                            <div class="row align-items-center">
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" placeholder="N° Commande">
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </form>    
+                    </div>
+            </div>
+        </div>
         <div class="page-body">
             <div class="container-xl">
                 <div class="row">
@@ -52,8 +69,8 @@
                                             </td>
                                             <td class="row-6 justify-content-center">
                                                 <a href="./facturation.php" class="col-sm-4 btn btn-primary">
-                                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                                    <p class="text-primary">.</p>Facture
+                                                    <i class="fa fa-file-invoice" aria-hidden="true"></i>
+                                                    <p class="text-primary">..</p>Facture
                                                 </a>
                                                 <a href="#" class="col-sm-2 offset-1">Modifier</a>
                                                 <a href="#" class="col-sm-2 text-danger offset-1">Supprimer</a>

@@ -8,13 +8,13 @@ $cliant = null;
 
 <?php
 if (isset($_POST['token-client'])) {
-    $client->updateClient($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['adresse'], $_POST['telephone'], $_POST['id_client']);
+    $client->updateClient($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['adresse'], $_POST['telephone'], $_POST['id']);
     echo '<script>window.location.href = "client.php"</script>';
 }
 ?>
 <?php
 if (isset($_GET['edit'])) {
-    $cliant = $client->getClientByID($_POST['id_client']);
+    $cliant = $client->getClientByID($_POST['id']);
     var_dump($cliant);
 }
 ?>
@@ -51,47 +51,48 @@ if (isset($_GET['edit'])) {
                                         id="token-client" name="token-client" placeholder="token-client">
                                     </div>
                                     <div class="form-group mb-3">
-                                        <input hidden type="text" value=<?php= $cliant['id_client'] ?> class="form-control"
-                                        id="id" name="id" placeholder="token-client">
+                                        <input hidden type="text"  class="form-control"
+                                        id="id" name="id" 
+                                        value=<?= $cliant['id_client'] ?> placeholder="token-client">
                                     </div>
                                     <div class="form-group mb-3 ">
                                         <label class="form-label">Nom</label>
                                         <div>
                                             <input type="text" class="form-control" 
-                                            value=<?php= $cliant['nom'] ?> id="nom_client" name="nom" required
-                                            placeholder="Nom du client">
+                                            id="nom_client" name="nom" required
+                                            value=<?= $cliant['nom'] ?> placeholder="Nom du client">
                                         </div>
                                     </div>
                                     <div class="form-group mb-3 ">
                                         <label class="form-label">Prenom</label>
                                         <div>
                                             <input type="text" class="form-control" 
-                                            value=<?php= $cliant['prenom'] ?> id="prenom_client" name="prenom" required
-                                            placeholder="Prenom du client">
+                                            id="prenom_client" name="prenom" required
+                                            value=<?= $cliant['prenom'] ?> placeholder="Prenom du client">
                                         </div>
                                     </div>
                                     <div class="form-group mb-3 ">
                                         <label class="form-label">Email</label>
                                         <div>
                                             <input type="email" class="form-control" 
-                                            value=<?php= $cliant['email'] ?> id="email_client" name="email" required
-                                             placeholder="email_client@exemple.com">
+                                            id="email_client" name="email" required
+                                            value=<?= $cliant['email'] ?> placeholder="email_client@exemple.com">
                                         </div>
                                     </div>
                                     <div class="form-group mb-3 ">
                                         <label class="form-label">Adresse</label>
                                         <div>
                                             <input type="text" class="form-control" 
-                                            value=<?php= $cliant['adresse'] ?> id="adresse_client" name="adresse" required
-                                             placeholder="Adresse du client">
+                                            id="adresse_client" name="adresse" required
+                                            value=<?= $cliant['adresse'] ?> placeholder="Adresse du client">
                                         </div>
                                     </div>
                                     <div class="form-group mb-3 ">
                                         <label class="form-label">Telephone</label>
                                         <div>
                                             <input type="tel" class="form-control" 
-                                            value=<?php= $cliant['telephone'] ?> id="telephone_client" name="telephone" required
-                                             placeholder="xx xxx xx xx">
+                                            id="telephone_client" name="telephone" required
+                                            value=<?= $cliant['telephone'] ?> placeholder="xx xxx xx xx">
                                         </div>
                                     </div>
                                     <div class="form-footer">

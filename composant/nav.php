@@ -13,7 +13,16 @@
                             </span>
                         </a>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="./fournisseur.php">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <i class="fas fa-box"></i>
+                            </span>
+                            <span class="nav-link-title">
+                                Gestion Fournisseurs
+                            </span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./commande.php">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -45,6 +54,7 @@
                             </span>
                         </a>
                     </li>
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link" href="./facturation.php">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -52,6 +62,14 @@
                             </span>
                             <span class="nav-link-title">
                                 Gestion Facturation
+                            </span>
+                        </a>
+                    </li>
+                    -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="./user.php">
+                            <span class="nav-link-title text-primary">
+                                Utilisateurs
                             </span>
                         </a>
                     </li>

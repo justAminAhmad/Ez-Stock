@@ -12,7 +12,7 @@
                     </h2>
                 </div>
                 <div class="col-auto">
-                    <a href="./commande.php" class="btn btn-primary">
+                    <a href="commande.php" class="btn btn-primary">
                         Liste Commandes
                     </a>
                 </div>

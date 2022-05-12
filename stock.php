@@ -1,6 +1,10 @@
-<?php include_once('./composant/head.php'); ?>
-<?php include_once('./composant/header.php'); ?>
-<?php include_once('./composant/nav.php'); ?>
+<?php include_once('./composant/head.php'); 
+include_once('./composant/header.php');
+include_once('./composant/nav.php'); 
+
+$stocks = new Stock();
+$categories = new Categorie();
+?>
 
 <div class="page-wrapper">
     <div class="container-xl">
@@ -12,7 +16,7 @@
                     </h2>
                 </div>
                 <div class="col-auto">
-                    <a href="./ajouter_stock.php" class="btn btn-primary">
+                    <a href="./stockNew.php" class="btn btn-primary">
                         <i class="fa fa-plus"></i>
                         <p class="text-primary">.</p> Ajouter Produit
                     </a>
@@ -23,7 +27,7 @@
 
             <div class="container-xl">
                 <div class="row mb-5">
-                    <div class="card col-3 offset-5">
+                    <div class="card col-4 offset-4">
                         <div class="card-body">
                             <form>
                                 <div class="row align-items-center">
@@ -36,8 +40,8 @@
                                 </div>
                             </form>    
                         </div>
+                    </div>
                 </div>
-            </div>
             <div class="container-xl">
                 <div class="row">
                     <div class="col-12">
@@ -46,7 +50,6 @@
                                 <table class="table table-vcenter card-table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Code</th>
                                             <th>Désignation</th>
                                             <th>Quantité</th>
                                             <th>Prix Unitaire</th>
@@ -56,17 +59,39 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                            if ($stocks->getStocks()) {
+                                                foreach ($stocks->getStocks() as $stock) {
+                                                    // var_dump($client);
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Pressea</td>
-                                            <td>149</td>
-                                            <td>600</td>
-                                            <td>Jus de fruit</td>
-                                            <td>Boisson</td>
+                                            <td><?= $stock['designation'] ?></td>
+                                            <td><?= $stock['quantite'] ?></td>
+                                            <td><?= $stock['prix'] ?></td>
+                                            <td><?= $stock['type'] ?></td>
+                                            <td><?= $stock['id_categ'] ?></td>
                                             <td>
-                                                <a href="#">Modifier</a>
+                                                <form method="post" action="./stockModif.php?edit"
+                                                    class='btn btn-warning p-0'>
+                                                    <input hidden type="text" value=<?= $stock['id_stock'] ?> name="id" id="id" />
+                                                    <button type="submit" name="action" value="edit" class="btn btn-warning">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                </form>
+                                                <form method="post" class='btn btn-danger p-0'>
+                                                    <input hidden type="text" value=<?= $stock['id_stock'] ?> name="id" id="id" />
+                                                    <button type="submit" name="action" value="delete" class="btn btn-danger">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
+                                        <?php
+                                            }
+                                        } else {
+                                            echo "<p class='mt-5 mx-auto'>Il n'ya pas de Stock</p>";
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

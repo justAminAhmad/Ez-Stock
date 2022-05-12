@@ -12,7 +12,7 @@
                     </h2>
                 </div>
                 <div class="col-auto">
-                    <a href="./nouvelle_commande.php" class="btn btn-primary">
+                    <a href="./commandeNew.php" class="btn btn-primary">
                         <i class="fa fa-plus"></i>
                         <p class="text-primary">.</p> Nouvelle Commande
                     </a>
@@ -23,25 +23,16 @@
 
             <div class="container-xl">
                 <div class="row mb-5">
-                    <div class="card col-7 offset-3">
+                    <div class="card col-4 offset-4">
                         <div class="card-body">
                             <form>
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label">Filtrer clients</label>
+                                <div class="row align-items-center">
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" placeholder="Client">
                                     </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label">Code-Client</label>
-                                    <div class="col-sm-10">  
-                                        <select class="form-select" aria-label="Disabled select example">
-                                            <option selected></option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div> 
+                                    <div class="col-sm-2">
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
                             </form>    
                         </div>
