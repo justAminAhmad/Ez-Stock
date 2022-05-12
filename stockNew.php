@@ -6,7 +6,7 @@ $frn = new User();
 $stock = new Stock();
 $categories = new Categorie();
 
-if (isset($_POST['token-client'])) {
+if (isset($_POST['token-stock'])) {
     $stock->addStock($_POST['designation'], $_POST['quantite'], $_POST['prix'], $_POST['categorie'], $_POST['type']);
     echo '<script>window.location.href = "stock.php"</script>';
     exit();
@@ -36,8 +36,8 @@ if (isset($_POST['token-client'])) {
                     <form class="card card-md" method="post" class="stock">
                         <div class="card-body">
                             <div class="form-group">
-                                <input hidden type="text" class="form-control" id="token-client" name="token-client"
-                                    placeholder="token-client">
+                                <input hidden type="text" class="form-control" id="token-stock" name="token-stock"
+                                    placeholder="token-stock">
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Désignation</label>
