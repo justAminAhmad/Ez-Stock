@@ -52,7 +52,6 @@ if (isset($_POST['action'])) {
                                             if ($users->getUsers("user")) 
                                             {
                                                 foreach ($users->getUsers("client") as $user) {
-                                            // var_dump($user);
                                         ?>
                                         <tr>
                                             <td><?= $user['pseudo'] ?></td>

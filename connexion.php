@@ -55,7 +55,20 @@ if (isset($_POST['submit']))
                             <input type="password" class="form-control"  id="conPwd" 
                             placeholder="********" autocomplete="off" name="password" required>
                             <span class="input-group-text">
-                                <i class="fa fa-eye"></i>
+                                <a href="#" onclick="toggle()"><i class="fa fa-eye"></i></a>
+                                <script>
+                                    function toggle()
+                                    {
+                                        var pwd = document.getElementById("conPwd");
+                                        if(pwd.type === "password")
+                                        {
+                                            pwd.type = "text";
+                                        } else
+                                        {
+                                            pwd.type = "password";
+                                        }
+                                    }
+                                </script>
                             </span>
                         </div>
                     </div>

@@ -16,11 +16,9 @@
         integrity="sha256-zmfNZmXoNWBMemUOo1XUGFfc0ihGGLYdgtJS3KCr/l0=" crossorigin="anonymous" />
 
     <?php
-        include_once("./includes/functions.php");
         include_once("./includes/class-autoload.inc.php");
-    ?>
     
-    <!--
+    
         // start a session
         session_start();
         $admin = null;
@@ -28,24 +26,20 @@
         if (!isset($_SESSION['token'])) 
         {
             // if php self not on login page
-            if (basename($_SERVER['PHP_SELF']) != 'login.php') 
+            if (basename($_SERVER['PHP_SELF']) != 'connexion.php') 
             {
                 // redirect to login page
-                header('Location: login.php');
+                header('Location: connexion.php');
             }
         }
         else 
         {
-            if (basename($_SERVER['PHP_SELF']) == 'login.php') 
+            if (basename($_SERVER['PHP_SELF']) == 'connexion.php') 
             {
                 // redirect to login page
-                header('Location: clients.php');
+                header('Location: client.php');
                 $admin = new Admin();
                 $admin = $admin->getAdminByToken($_SESSION['token']);
-                var_dump($admin);
-                $nom = $admin['nom'];
-                $prenom = $admin['prenom'];
-
 
                 // set admin nom and prenom to  javascipt local storage
                 echo "<script>
@@ -54,8 +48,8 @@
                 </script>";
             }
         }
-    -->
-
+   
+?>
     <style>
     *,
     *::after,

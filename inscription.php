@@ -1,15 +1,12 @@
 <?php include_once('./composant/head.php'); 
 $user = new User();
 
-if (isset($_POST['token-client'])) {
-    //var_dump($_POST);
-    if ($_POST['token-client'] == "") {
-        // head to login page
+if (isset($_POST['token-user'])) {
+    if ($_POST['token-user'] == "") {
             echo '<script>window.location.href = "connexion.php"</script>';
 
     }
     $user->addUser($_POST['pseudo'], $_POST['email'], $_POST['password']);
-    // $client->addUtilisateurClient($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['adresse'], $_POST['telephone']);
     echo '<script>window.location.href = "user.php"</script>';
     exit();
 }
@@ -29,7 +26,7 @@ if (isset($_POST['token-client'])) {
               <form method="post" class="user">
                 
                 <div class="form-group">
-                  <input hidden type="text" value="<? $_SESSION['token'] ?>" class="form-control" id="token-client" name="token-client" placeholder="token-client">
+                  <input hidden type="text" value="<? $_SESSION['token'] ?>" class="form-control" id="token-user" name="token-user" placeholder="token-user">
                 </div>
                 
                 <div class="mb-3">

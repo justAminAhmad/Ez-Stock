@@ -17,7 +17,7 @@ class Stock extends Db
 
   public function getStockByID($id)
   {
-    $id = htmlspecialchars(sanitizeString($id));
+    $id = htmlspecialchars($id);
 
     $sql = "SELECT * FROM stocks WHERE id_stock = ?";
     $stmt = $this->connect()->prepare($sql);
@@ -32,11 +32,11 @@ class Stock extends Db
 
   public function addStock($designation, $quantite, $prix, $id_categ, $type)
   {
-    $designation = htmlspecialchars(sanitizeString($designation));
-    $quantite = htmlspecialchars(sanitizeString($quantite));
-    $prix = htmlspecialchars(sanitizeString($prix));
-    $id_categ = htmlspecialchars(sanitizeString($id_categ));
-    $type = htmlspecialchars(sanitizeString($type));
+    $designation = htmlspecialchars($designation);
+    $quantite = htmlspecialchars($quantite);
+    $prix = htmlspecialchars($prix);
+    $id_categ = htmlspecialchars($id_categ);
+    $type = htmlspecialchars($type);
 
     $sql = "INSERT INTO `stocks` (`id_stock`, `designation`, `quantite`, `prix`, `id_categ`, `type`) VALUES (NULL, ?, ?, ?, ?, ?)";
     $stmt = $this->connect()->prepare($sql);
@@ -48,13 +48,13 @@ class Stock extends Db
   // UPDATE
   public function updateStock($id_stock, $designation, $quantite, $prix, $id_categ, $type, $id_fnr)
   {
-    $id = htmlspecialchars(sanitizeString($id));
-    $designation = htmlspecialchars(sanitizeString($designation));
-    $quantite = htmlspecialchars(sanitizeString($quantite));
-    $prix = htmlspecialchars(sanitizeString($prix));
-    $id_categ = htmlspecialchars(sanitizeString($id_categ));
-    $type = htmlspecialchars(sanitizeString($type));
-    $id_fnr = htmlspecialchars(sanitizeString($id_fnr));
+    $id = htmlspecialchars($id);
+    $designation = htmlspecialchars($designation);
+    $quantite = htmlspecialchars($quantite);
+    $prix = htmlspecialchars($prix);
+    $id_categ = htmlspecialchars($id_categ);
+    $type = htmlspecialchars($type);
+    $id_fnr = htmlspecialchars($id_fnr);
 
     $sql = "UPDATE `stocks` SET `designation` = ?, `quantite` = ?, `prix` = ?, `id_categ` = ?, `type` = ?, `id_fnr` = ? WHERE `stocks`.`id_stock` = ?;";
     $stmt = $this->connect()->prepare($sql);
@@ -63,8 +63,8 @@ class Stock extends Db
   // update quantity of stock
   public function updateStockQuantite($quantite, $id)
   {
-    $quantite = htmlspecialchars(sanitizeString($quantite));
-    $id = htmlspecialchars(sanitizeString($id));
+    $quantite = htmlspecialchars($quantite);
+    $id = htmlspecialchars($id);
 
     $sql = "UPDATE `stocks` SET `quantite` = ? WHERE `stocks`.`id_stock` = ?;";
     $stmt = $this->connect()->prepare($sql);
@@ -75,7 +75,7 @@ class Stock extends Db
   //DELETE
   public function delStock($id)
   {
-    $id = htmlspecialchars(sanitizeString($id));
+    $id = htmlspecialchars($id);
 
     $sql = "DELETE FROM stocks WHERE id_stock = ?";
     $stmt = $this->connect()->prepare($sql);

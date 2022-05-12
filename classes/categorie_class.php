@@ -17,7 +17,7 @@ class Categorie extends Db
 
   public function getCategoriesByID($id)
   {
-    $id = htmlspecialchars(sanitizeString($id));
+    $id = htmlspecialchars($id);
 
     $sql = "SELECT * FROM categories WHERE id_categ = ?";
     $stmt = $this->connect()->prepare($sql);
@@ -29,7 +29,7 @@ class Categorie extends Db
 
   public function addCategories($label)
   {
-    $label = htmlspecialchars(sanitizeString($label));
+    $label = htmlspecialchars($label);
 
     $sql = "INSERT INTO `categories` (`id_categ `, `designation`) VALUES (NULL, ?)";
     $stmt = $this->connect()->prepare($sql);
@@ -38,7 +38,7 @@ class Categorie extends Db
 
   public function delCategories($id)
   {
-    $id = htmlspecialchars(sanitizeString($id));
+    $id = htmlspecialchars($id);
 
     $sql = "DELETE FROM categories WHERE id_categ = ?";
     $stmt = $this->connect()->prepare($sql);

@@ -15,13 +15,11 @@ if (isset($_POST['token-client'])) {
 <?php
 if (isset($_GET['edit'])) {
     $cliant = $client->getClientByID($_POST['id']);
-    var_dump($cliant);
 }
 ?>
 
 <div class="page-wrapper">
     <div class="container-xl">
-        <!-- Page title -->
         <div class="page-header d-print-none">
             <div class="row align-items-center">
                 <div class="col">

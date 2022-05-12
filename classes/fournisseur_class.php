@@ -15,7 +15,7 @@ class Fournisseur extends Db
 
   public function searchFournisseur($search)
   {
-    $search = htmlspecialchars(sanitizeString($search));
+    $search = htmlspecialchars($search);
     $sql = "SELECT * FROM fournisseurs WHERE nom LIKE '%$search%' OR prenom LIKE '%$search%' OR id_fnr LIKE '%$search%'";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute();
@@ -28,7 +28,7 @@ class Fournisseur extends Db
 
   public function getFournisseurByID($id)
   {
-    $id = htmlspecialchars(sanitizeString($id));
+    $id = htmlspecialchars($id);
     $sql = "SELECT * FROM fournisseurs WHERE id_fnr = ?";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$id]);
@@ -39,11 +39,11 @@ class Fournisseur extends Db
 
   public function addFournisseur($nom, $prenom, $email, $adresse, $telephone)
   {
-    $nom = htmlspecialchars(sanitizeString($nom));
-    $prenom = htmlspecialchars(sanitizeString($prenom));
-    $email = htmlspecialchars(sanitizeString($email));
-    $adresse = htmlspecialchars(sanitizeString($adresse));
-    $telephone = htmlspecialchars(sanitizeString($telephone));
+    $nom = htmlspecialchars($nom);
+    $prenom = htmlspecialchars($prenom);
+    $email = htmlspecialchars($email);
+    $adresse = htmlspecialchars($adresse);
+    $telephone = htmlspecialchars($telephone);
 
     $sql = "INSERT INTO fournisseurs(nom, prenom, email, adresse, telephone) VALUES (?, ?, ?, ?, ?)";
     $stmt = $this->connect()->prepare($sql);
@@ -52,12 +52,12 @@ class Fournisseur extends Db
 
   public function updateFournisseur($nom, $prenom, $email, $adresse, $telephone, $id)
   {
-    $nom = htmlspecialchars(sanitizeString($nom));
-    $prenom = htmlspecialchars(sanitizeString($prenom));
-    $email = htmlspecialchars(sanitizeString($email));
-    $adresse = htmlspecialchars(sanitizeString($adresse));
-    $telephone = htmlspecialchars(sanitizeString($telephone));
-    $id = htmlspecialchars(sanitizeString($id));
+    $nom = htmlspecialchars($nom);
+    $prenom = htmlspecialchars($prenom);
+    $email = htmlspecialchars($email);
+    $adresse = htmlspecialchars($adresse);
+    $telephone = htmlspecialchars($telephone);
+    $id = htmlspecialchars($id);
 
     $sql = "UPDATE fournisseurs SET nom = ?, prenom = ?, email = ?, adresse = ?, telephone = ? WHERE id_fnr = ?";
     $stmt = $this->connect()->prepare($sql);
@@ -66,7 +66,7 @@ class Fournisseur extends Db
 
   public function delFournisseur($id)
   {
-    $id = htmlspecialchars(sanitizeString($id));
+    $id = htmlspecialchars($id);
 
     $sql = "DELETE FROM fournisseurs WHERE id_fnr = ?";
     $stmt = $this->connect()->prepare($sql);

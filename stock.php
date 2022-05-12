@@ -4,6 +4,13 @@ include_once('./composant/nav.php');
 
 $stocks = new Stock();
 $categories = new Categorie();
+
+if (isset($_POST['action'])) {
+    if (isset($_POST['action']) == 'delete') {
+        $stocks->delStock($_POST['id']);
+        $_POST = array();
+    }
+}
 ?>
 
 <div class="page-wrapper">
@@ -62,7 +69,6 @@ $categories = new Categorie();
                                         <?php
                                             if ($stocks->getStocks()) {
                                                 foreach ($stocks->getStocks() as $stock) {
-                                                    // var_dump($client);
                                         ?>
                                         <tr>
                                             <td><?= $stock['designation'] ?></td>
@@ -74,7 +80,7 @@ $categories = new Categorie();
                                                 <form method="post" action="./stockModif.php?edit"
                                                     class='btn btn-warning p-0'>
                                                     <input hidden type="text" value=<?= $stock['id_stock'] ?> name="id" id="id" />
-                                                    <button type="submit" name="action" value="edit" class="btn btn-warning">
+                                                    <button type="submit" name="action" value="edit" class="btn btn-primary">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
                                                 </form>
